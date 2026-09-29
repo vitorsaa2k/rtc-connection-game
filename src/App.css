@@ -1,0 +1,10 @@
+.container {
+  display: flexbox;
+  flex-direction: column;
+  justify-content: center;
+}
+.generated_container {
+  display: flexbox;
+  flex-direction: column;
+  justify-content: center;
+}
