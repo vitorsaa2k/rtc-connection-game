@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import './App.css'
 import { useRTC } from './hooks/useRTC'
+import { useMessageSender } from './hooks/useMessageSender'
 
 function App() {
   const rtcContext = useRTC()
-  console.log(rtcContext?.peer.current)
+  const sendMessage = useMessageSender()
   const [receivedOffer, setReceivedOffer] = useState('')
   const [generatedAnswer, setGeneratedAnswer] = useState('')
   const [receivedAnswer, setReceivedAnswer] = useState('')
@@ -14,13 +15,19 @@ function App() {
     setGeneratedAnswer(JSON.stringify(answer))
   }
 
+  async function createOffer() {
+    const offer = await rtcContext.createOffer()
+    console.log(JSON.stringify(offer))
+    console.log(offer)
+  }
+
   async function submitPeerAnswer() {
     const answer = JSON.parse(receivedAnswer) as RTCSessionDescriptionInit
     await rtcContext.setRemoteAnswer(answer)
   }
 
   return <main className='container'>
-    <button onClick={rtcContext?.createOffer}>create offer</button>
+    <button onClick={createOffer}>create offer</button>
     <form>
       <label>
         Receiving offer
@@ -41,7 +48,7 @@ function App() {
       <button onClick={submitPeerAnswer} type='button'>submit answer</button>
     </form>
     <p>Status: { rtcContext.isConnected ? "Connected" : "Disconnected"}</p>
-    <button onClick={() => rtcContext.sendMessage("test")}>Send message</button>
+    <button onClick={() => sendMessage({type: "start"})}>Send message</button>
   </main>
 }
 

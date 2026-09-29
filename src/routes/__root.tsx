@@ -5,21 +5,21 @@ import { GameStateProvider } from '../contexts/gameState/Provider'
 
 const RootLayout = () => (
   <>
-    <RTCContextProvider>
-      <GameStateProvider>
-      <div className="p-2 flex gap-2">
-        <Link to="/createGame" className="[&.active]:font-bold">
-          Create Game
-        </Link>
-        <Link to="/about" className="[&.active]:font-bold">
-          Join Game
-        </Link>
-      </div>
-      <hr />
-      <Outlet />
-      <TanStackRouterDevtools />
-      </GameStateProvider>
-    </RTCContextProvider>
+    <GameStateProvider>
+      <RTCContextProvider>
+        <div className="p-2 flex gap-2">
+          <Link to="/createGame" className="[&.active]:font-bold">
+            Create Game
+          </Link>
+          <Link to="/about" className="[&.active]:font-bold">
+            Join Game
+          </Link>
+        </div>
+        <hr />
+        <Outlet />
+        <TanStackRouterDevtools />
+      </RTCContextProvider>
+    </GameStateProvider>
   </>
 )
 

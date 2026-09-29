@@ -1,5 +1,6 @@
 import { useCallback,  useEffect, useRef, useState, type ReactNode } from "react"
 import { RTCContext } from "./Context";
+import { useMessageHandler } from "../../hooks/useMessageHandler";
 
 const ICE_SERVERS: RTCConfiguration = {
   iceServers: [
@@ -16,6 +17,7 @@ interface UseWebRTCDataChannelOptions {
 export function RTCContextProvider({ options = {}, children }: {options?: UseWebRTCDataChannelOptions, children: ReactNode}) {
   const [messages, setMessages] = useState<string[]>([])
   const [isConnected, setIsConnected] = useState<boolean>(false)
+  const messageHandler = useMessageHandler()
 
   const peerRef = useRef<RTCPeerConnection | null>(null)
   const channelRef = useRef<RTCDataChannel | null>(null)
@@ -36,8 +38,9 @@ export function RTCContextProvider({ options = {}, children }: {options?: UseWeb
     channel.onmessage = (event: MessageEvent) => {
       console.log(event.data)
       setMessages(prev => [...prev, event.data])
+      messageHandler(event.data)
     }
-  }, [])
+  }, [messageHandler])
 
   const createPeerConnection = useCallback(() => {
     if (peerRef.current) return peerRef.current
@@ -68,7 +71,6 @@ export function RTCContextProvider({ options = {}, children }: {options?: UseWeb
     const peer = createPeerConnection()
     const channel = peer.createDataChannel("chatChannel", { ordered: true })
     setupDataChannelEvents(channel)
-
     const offer = await peer.createOffer()
     await peer.setLocalDescription(offer)
     if (peer.iceGatheringState === "complete") {
