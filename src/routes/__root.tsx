@@ -1,10 +1,12 @@
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { RTCContextProvider } from '../contexts/RTCContext/Provider'
+import { GameStateProvider } from '../contexts/gameState/Provider'
 
 const RootLayout = () => (
   <>
     <RTCContextProvider>
+      <GameStateProvider>
       <div className="p-2 flex gap-2">
         <Link to="/createGame" className="[&.active]:font-bold">
           Create Game
@@ -16,6 +18,7 @@ const RootLayout = () => (
       <hr />
       <Outlet />
       <TanStackRouterDevtools />
+      </GameStateProvider>
     </RTCContextProvider>
   </>
 )
