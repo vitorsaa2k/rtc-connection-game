@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-export interface RTCContextI {
+export interface RTCContext {
   peer: React.RefObject<RTCPeerConnection | null>;
   messages: string[]
   isConnected: boolean
@@ -12,4 +12,4 @@ export interface RTCContextI {
 }
 
 
-export const RTCContext = createContext<RTCContextI | null>(null)
+export const RTCContext = createContext<RTCContext | null>(null)
