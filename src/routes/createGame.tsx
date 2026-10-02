@@ -1,11 +1,11 @@
-import { createFileRoute } from '@tanstack/react-router'
-import App from '../App'
+import { createFileRoute } from "@tanstack/react-router";
+import { Create } from "../pages/create/create";
 
-export const Route = createFileRoute('/createGame')({
+export const Route = createFileRoute("/createGame")({
   component: RouteComponent,
-})
+});
 
 // eslint-disable-next-line  react-refresh/only-export-components
 function RouteComponent() {
-  return <App />
+  return <Create />;
 }

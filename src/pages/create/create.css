@@ -1,0 +1,64 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game_form_container {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 18px;
+  background-color: var(--primary-bg-color);
+  box-shadow: 0 20px 50px -24px oklch(10% 0.05 262/0.8);
+}
+
+.game_title_container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--foreground-color);
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.desc {
+  font-size: 0.875rem;
+}
+
+.create_room_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--foreground-color);
+  background-color: var(--primary-color);
+  width: 10rem;
+  height: 3rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 18px;
+  font-weight: 600;
+  font-size: 18px;
+  width: 100%;
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, oklch(0.6164 0.0968 202.13) 40%, transparent),
+    0 18px 40px -18px
+      color-mix(in oklab, oklch(0.6164 0.0968 202.13) 45%, transparent);
+  transition: background-color 0.2s ease;
+}
+
+.create_room_button:hover {
+  width: 100%;
+  background-color: #23969e;
+}
+.keep_open_warn {
+  color: var(--foreground-color);
+  font-size: 12px;
+}
