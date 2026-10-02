@@ -5,6 +5,12 @@
   font-family: "DM Sans", sans-serif;
 }
 
+.copy_link_top {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .copy_link_title {
   color: var(--foreground-color);
   font-weight: 600;
