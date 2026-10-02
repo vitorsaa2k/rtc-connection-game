@@ -1,7 +1,7 @@
 import "./createForm.css";
 import { CopyLink } from "./components/copyLink";
 import { FriendConnection } from "./components/friendConnection";
-import { QRCode } from "./components/qrCode";
+import { QRCode } from "./components/QRCode";
 import { CreateFormTitle } from "./components/title";
 import { CopyIcon } from "../../../components/icons/copy";
 import { ConnectionDetails } from "./components/connectionDetails";
