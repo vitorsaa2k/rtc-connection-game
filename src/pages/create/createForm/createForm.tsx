@@ -8,7 +8,7 @@ import { ConnectionDetails } from "./components/connectionDetails";
 
 export function CreateForm() {
   return (
-    <div>
+    <div className="create_form_container">
       <CreateFormTitle />
       <CopyLink generatedLink="ssssaskjdhajkdhaskjdsahlkdjashdjakshdkshdjfhjdksfhjsdfjhkdsfhdsfjhdsdsfsdfdsfsdfjhkdsfjksjalhdajksahjkd" />
       <QRCode />
