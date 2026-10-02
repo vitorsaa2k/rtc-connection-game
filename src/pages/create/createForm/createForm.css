@@ -1,0 +1,30 @@
+.copy_invite_data_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-bg-color);
+  border: none;
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  color: var(--foreground-color);
+}
+
+.copy_invite_data_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--primary-bg-color);
+  border: none;
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  color: var(--foreground-color);
+  border-radius: 18px;
+  transition: background-color 0.2s ease;
+}
+
+.copy_invite_data_button:hover {
+  background-color: oklch(0.3816 0.0268 188.55);
+}

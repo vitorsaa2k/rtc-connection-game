@@ -1,7 +1,9 @@
+import "./createForm.css";
 import { CopyLink } from "./components/copyLink";
 import { FriendConnection } from "./components/friendConnection";
 import { QRCode } from "./components/qrCode";
 import { CreateFormTitle } from "./components/title";
+import { CopyIcon } from "../../../components/icons/copy";
 
 export function CreateForm() {
   return (
@@ -10,7 +12,10 @@ export function CreateForm() {
       <CopyLink generatedLink="ssssaskjdhajkdhaskjdsahlkdjashdjakshdkshdjfhjdksfhjsdfjhkdsfhdsfjhdsdsfsdfdsfsdfjhkdsfjksjalhdajksahjkd" />
       <QRCode />
       <FriendConnection />
-      <button>Copy invite data instead</button>
+      <button className="copy_invite_data_button">
+        <CopyIcon />
+        Copy invite data instead
+      </button>
       <div>
         <p>Advanced connection details</p>
       </div>
