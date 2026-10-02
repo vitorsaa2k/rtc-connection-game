@@ -2,18 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary-bg-color);
-  border: none;
-  width: 100%;
-  padding: 16px;
-  font-size: 16px;
-  color: var(--foreground-color);
-}
-
-.copy_invite_data_button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 4px;
   background-color: var(--primary-bg-color);
   border: none;
