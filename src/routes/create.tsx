@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Create } from "../pages/create/create";
 
-export const Route = createFileRoute("/createGame")({
+export const Route = createFileRoute("/create")({
   component: RouteComponent,
 });
 

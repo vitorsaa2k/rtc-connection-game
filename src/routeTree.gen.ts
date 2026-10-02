@@ -11,7 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as CreateGameRouteImport } from './routes/createGame'
+import { Route as CreateRouteImport } from './routes/create'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -23,40 +23,40 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CreateGameRoute = CreateGameRouteImport.update({
-  id: '/createGame',
-  path: '/createGame',
+const CreateRoute = CreateRouteImport.update({
+  id: '/create',
+  path: '/create',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/createGame': typeof CreateGameRoute
+  '/create': typeof CreateRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/createGame': typeof CreateGameRoute
+  '/create': typeof CreateRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/createGame': typeof CreateGameRoute
+  '/create': typeof CreateRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/createGame'
+  fullPaths: '/' | '/about' | '/create'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/createGame'
-  id: '__root__' | '/' | '/about' | '/createGame'
+  to: '/' | '/about' | '/create'
+  id: '__root__' | '/' | '/about' | '/create'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  CreateGameRoute: typeof CreateGameRoute
+  CreateRoute: typeof CreateRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -75,11 +75,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/createGame': {
-      id: '/createGame'
-      path: '/createGame'
-      fullPath: '/createGame'
-      preLoaderRoute: typeof CreateGameRouteImport
+    '/create': {
+      id: '/create'
+      path: '/create'
+      fullPath: '/create'
+      preLoaderRoute: typeof CreateRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -88,7 +88,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  CreateGameRoute: CreateGameRoute,
+  CreateRoute: CreateRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -17,7 +17,7 @@ export function Index() {
           </p>
         </div>
         <div className="initial_game_buttons_container">
-          <Link to="/createGame" className="create_game_button">
+          <Link to="/create" className="create_game_button">
             Create Game
           </Link>
           <Link to="/about" className="join_game_button">
