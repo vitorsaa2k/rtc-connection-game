@@ -1,5 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+:root {
+  --foreground-color: #edddd4;
+  --primary-color: #197278;
+  --primary-bg-color: #283d3b;
+  --secondary-color: #c44536;
+  --secondary-bg-color: #772e25;
+}
+
 body {
+  background-color: var(--foreground-color);
   margin: 0;
+  font-family: "DM Sans", sans-serif;
 }
 
 p {
