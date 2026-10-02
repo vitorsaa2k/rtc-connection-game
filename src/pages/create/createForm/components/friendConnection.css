@@ -1,0 +1,42 @@
+.friend_connection_container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: oklch(0.2 0.0268 188.55);
+  padding: 12px;
+  border-radius: 18px;
+  border: solid 1px var(--primary-color);
+}
+
+.friend_connection_header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.friend_connection_title {
+  color: var(--foreground-color);
+  font-weight: 600;
+}
+
+.friend_connection_desc {
+  color: oklch(0.72 0.0215 51.5);
+}
+
+.friend_connection_button {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 6px;
+  padding: 8px;
+  color: var(--foreground-color);
+  background-color: var(--primary-bg-color);
+  transition: background-color 0.2s ease;
+}
+
+.friend_connection_button:hover {
+  background-color: oklch(0.3816 0.0268 188.55);
+}
