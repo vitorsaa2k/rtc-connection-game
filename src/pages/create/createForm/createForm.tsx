@@ -4,6 +4,7 @@ import { FriendConnection } from "./components/friendConnection";
 import { QRCode } from "./components/qrCode";
 import { CreateFormTitle } from "./components/title";
 import { CopyIcon } from "../../../components/icons/copy";
+import { ConnectionDetails } from "./components/connectionDetails";
 
 export function CreateForm() {
   return (
@@ -16,9 +17,7 @@ export function CreateForm() {
         <CopyIcon />
         Copy invite data instead
       </button>
-      <div>
-        <p>Advanced connection details</p>
-      </div>
+      <ConnectionDetails />
     </div>
   );
 }

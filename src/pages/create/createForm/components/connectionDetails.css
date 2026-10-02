@@ -1,0 +1,25 @@
+.connection_details_container {
+  background-color: oklch(0.2 0.0268 188.55);
+  padding: 12px;
+  border-radius: 18px;
+  color: var(--foreground-color);
+}
+
+.connection_details_button {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.details_list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.details_item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
