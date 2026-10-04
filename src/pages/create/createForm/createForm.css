@@ -22,3 +22,11 @@
 .copy_invite_data_button:hover {
   background-color: oklch(0.3816 0.0268 188.55);
 }
+
+.copy_invite_data_check_icon {
+  fill: var(--foreground-color);
+}
+
+.copy_invite_data_copy_icon {
+  fill: var(--foreground-color);
+}

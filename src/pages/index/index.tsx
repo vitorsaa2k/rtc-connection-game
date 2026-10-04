@@ -31,7 +31,7 @@ export function Index() {
             description="Nothing to sign up for, nothing stored anywhere."
           />
           <Card
-            icon={<LinkIcon />}
+            icon={<LinkIcon className="card_icon" />}
             title="Just a link"
             description="Create a game and send the link to your friend."
           />

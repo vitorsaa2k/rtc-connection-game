@@ -26,9 +26,8 @@
   background-color: oklch(0.2 0.0268 188.55);
 }
 
-.icon {
-  display: flex;
-  align-items: center;
+.copy_link_input_link_icon {
+  fill: var(--primary-color);
 }
 
 .copy_link_input {
@@ -62,4 +61,12 @@
 
 .copy_link_button:hover {
   background-color: oklch(0.6164 0.0968 202.13);
+}
+
+.copy_link_check_icon {
+  fill: var(--foreground-color);
+}
+
+.copy_link_copy_icon {
+  fill: var(--foreground-color);
 }

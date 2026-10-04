@@ -36,11 +36,11 @@ export function CreateForm({ encodedOffer }: { encodedOffer: string }) {
       >
         {isCopied ? (
           <>
-            <CheckIcon /> Copied!
+            <CheckIcon className="copy_invite_data_check_icon" /> Copied!
           </>
         ) : (
           <>
-            <CopyIcon />
+            <CopyIcon className="copy_invite_data_copy_icon" />
             Copy invite data instead
           </>
         )}
