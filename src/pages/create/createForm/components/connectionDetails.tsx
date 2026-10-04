@@ -1,6 +1,8 @@
+import { useRTC } from "../../../../hooks/useRTC";
 import "./connectionDetails.css";
 
 export function ConnectionDetails() {
+  const rtc = useRTC();
   return (
     <details className="connection_details_container">
       <summary className="connection_details_button">
@@ -9,27 +11,19 @@ export function ConnectionDetails() {
       <dl className="details_list">
         <div className="details_item">
           <dt>connectionState</dt>
-          <dd>new</dd>
+          <dd>{rtc.peer.current?.connectionState}</dd>
         </div>
         <div className="details_item">
           <dt>iceConnectionState</dt>
-          <dd>new</dd>
+          <dd>{rtc.peer.current?.iceConnectionState}</dd>
         </div>
         <div className="details_item">
           <dt>iceGatheringState</dt>
-          <dd>new</dd>
+          <dd>{rtc.peer.current?.iceGatheringState}</dd>
         </div>
         <div className="details_item">
           <dt>signalingState</dt>
-          <dd>new</dd>
-        </div>
-        <div className="details_item">
-          <dt>dataChannel</dt>
-          <dd>new</dd>
-        </div>
-        <div className="details_item">
-          <dt>localCandidates</dt>
-          <dd>new</dd>
+          <dd>{rtc.peer.current?.signalingState}</dd>
         </div>
       </dl>
     </details>
