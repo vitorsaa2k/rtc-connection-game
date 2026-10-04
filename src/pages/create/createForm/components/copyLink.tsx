@@ -1,8 +1,22 @@
+import { useState } from "react";
 import { CopyIcon } from "../../../../components/icons/copy";
 import "./copyLink.css";
 import { LinkIcon } from "./linkIcon";
+import { CheckIcon } from "../../../../components/icons/check";
 
 export function CopyLink({ generatedLink }: { generatedLink: string }) {
+  const [isCopied, setIsCopied] = useState<boolean>(false);
+  async function copyLinkToClipboard() {
+    try {
+      await navigator.clipboard.writeText(generatedLink);
+      setIsCopied(true);
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 2000);
+    } catch (err) {
+      console.error("Failed to copy to clipboard", err);
+    }
+  }
   return (
     <div className="copy_link_container">
       <div className="copy_link_top">
@@ -17,9 +31,17 @@ export function CopyLink({ generatedLink }: { generatedLink: string }) {
           />
         </div>
       </div>
-      <button className="copy_link_button">
-        <CopyIcon />
-        Copy link
+      <button className="copy_link_button" onClick={copyLinkToClipboard}>
+        {isCopied ? (
+          <>
+            <CheckIcon /> Copied!
+          </>
+        ) : (
+          <>
+            <CopyIcon />
+            Copy link
+          </>
+        )}
       </button>
     </div>
   );
