@@ -6,11 +6,13 @@ import { CreateFormTitle } from "./components/title";
 import { CopyIcon } from "../../../components/icons/copy";
 import { ConnectionDetails } from "./components/connectionDetails";
 
-export function CreateForm() {
+export function CreateForm({ encodedOffer }: { encodedOffer: string }) {
   return (
     <div className="create_form_container">
       <CreateFormTitle />
-      <CopyLink generatedLink="ssssaskjdhajkdhaskjdsahlkdjashdjakshdkshdjfhjdksfhjsdfjhkdsfhdsfjhdsdsfsdfdsfsdfjhkdsfjksjalhdajksahjkd" />
+      <CopyLink
+        generatedLink={`${window.location.protocol}//${window.location.host}/join#offer=${encodedOffer}`}
+      />
       <QRCode />
       <FriendConnection />
       <button className="copy_invite_data_button">

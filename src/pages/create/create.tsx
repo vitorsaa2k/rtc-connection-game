@@ -1,11 +1,21 @@
 import { useState } from "react";
 import "./create.css";
 import { CreateForm } from "./createForm/createForm";
+import { useRTC } from "../../hooks/useRTC";
+import { base64UrlEncode } from "../../utils/base64";
 
 export function Create() {
   const [isCreating, setIsCreating] = useState<boolean>(false);
+  const [isGeneratingOffer, setIsGeneratingOffer] = useState<boolean>(false);
+  const [encodedOffer, setEncodedOffer] = useState<string>("");
+  const rtc = useRTC();
 
   async function createRoom() {
+    setIsGeneratingOffer(true);
+    const offer = await rtc.createOffer();
+    setIsGeneratingOffer(false);
+    const encodedOffer = base64UrlEncode(JSON.stringify(offer));
+    setEncodedOffer(encodedOffer);
     setIsCreating(true);
   }
 
@@ -13,7 +23,7 @@ export function Create() {
     <main>
       <div className="game_form_container">
         {isCreating ? (
-          <CreateForm />
+          <CreateForm encodedOffer={encodedOffer} />
         ) : (
           <>
             <div className="game_title_container">
@@ -23,7 +33,11 @@ export function Create() {
                 to send to your friend.
               </p>
             </div>
-            <button onClick={createRoom} className="create_room_button">
+            <button
+              onClick={createRoom}
+              className="create_room_button"
+              disabled={isGeneratingOffer}
+            >
               Create Room
             </button>
           </>

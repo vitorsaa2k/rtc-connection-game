@@ -58,6 +58,10 @@ main {
   width: 100%;
   background-color: #23969e;
 }
+
+.create_room_button:disabled {
+  cursor: default;
+}
 .keep_open_warn {
   color: var(--foreground-color);
   font-size: 12px;
