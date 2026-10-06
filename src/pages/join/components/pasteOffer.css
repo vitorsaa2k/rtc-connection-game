@@ -1,0 +1,67 @@
+h1 {
+  margin: 0;
+}
+
+.paste_offer_container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.paste_offer_header {
+  display: flex;
+  flex-direction: column;
+  color: var(--foreground-color);
+}
+
+.paste_offer_desc {
+  font-size: 0.875rem;
+}
+
+.paste_offer_input {
+  background-color: var(--primary-bg-color-muted);
+  color: var(--foreground-color);
+  border: solid 1px transparent;
+  outline: none;
+  border-radius: 18px;
+  padding: 0.8rem;
+  transition: border 0.2s ease;
+}
+
+.paste_offer_input:focus {
+  border: solid 1px var(--primary-color);
+}
+
+.paste_offer_button {
+  all: unset;
+  background-color: var(--primary-color);
+  text-align: center;
+  color: var(--foreground-color);
+  border-radius: 12px;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, oklch(0.6164 0.0968 202.13) 40%, transparent),
+    0 18px 40px -18px
+      color-mix(in oklab, oklch(0.6164 0.0968 202.13) 45%, transparent);
+  transition: background-color 0.2s ease;
+}
+
+.paste_offer_button:hover {
+  background-color: oklch(0.6164 0.0968 202.13);
+}
+
+.paste_offer_back_button {
+  all: unset;
+  text-align: center;
+  color: var(--foreground-color);
+  transition: background-color 0.2s ease;
+  padding: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.paste_offer_back_button:hover {
+  background-color: oklch(0.3816 0.0268 188.55);
+}

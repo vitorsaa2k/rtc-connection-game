@@ -3,6 +3,7 @@
   --foreground-color: #edddd4;
   --primary-color: #197278;
   --primary-bg-color: #283d3b;
+  --primary-bg-color-muted: oklch(0.2 0.0268 188.55);
   --secondary-color: #c44536;
   --secondary-bg-color: #772e25;
 }

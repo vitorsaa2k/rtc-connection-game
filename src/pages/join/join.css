@@ -1,0 +1,10 @@
+.join_form_container {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 18px;
+  background-color: var(--primary-bg-color);
+  box-shadow: 0 20px 50px -24px oklch(10% 0.05 262/0.8);
+}
