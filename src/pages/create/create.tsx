@@ -4,6 +4,7 @@ import { CreateForm } from "./createForm/createForm";
 import { useRTC } from "../../hooks/useRTC";
 import { base64UrlEncode } from "../../utils/base64";
 import { Link } from "@tanstack/react-router";
+import { ConnectionState } from "../../components/connectionState/connectionState";
 
 export function Create() {
   const [isCreating, setIsCreating] = useState<boolean>(false);
@@ -23,6 +24,7 @@ export function Create() {
   return (
     <main>
       <div className="outsite_container">
+        {isCreating && <ConnectionState />}
         {isCreating ? (
           <div className="game_form_container">
             <CreateForm encodedOffer={encodedOffer} />

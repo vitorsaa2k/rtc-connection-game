@@ -1,0 +1,23 @@
+.connection_state_container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.connection_state {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 24px;
+  border: solid 1px var(--primary-color);
+  color: var(--foreground-color);
+  background-color: var(--primary-bg-color);
+}
+
+.connection_state_wifi_icon {
+  fill: var(--foreground-color);
+  width: 20px;
+}
