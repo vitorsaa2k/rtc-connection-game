@@ -8,7 +8,7 @@ For this i decided to build a "How well do you know your friend?" game.
 - [x] Create WebRTC global context
 - [x] Create game state global context
 - [x] Create a handler for receiving/sending messages using the WebRTC peer connection
-- [ ]  Create and stylize home page
-- [ ]  Create and stylize create game page
+- [x]  Create and stylize home page
+- [x]  Create and stylize create game page
 - [ ]  Create and stylize join game page
 - [ ]  Create and stylize the page for playing the game (where the questions will be shown)
