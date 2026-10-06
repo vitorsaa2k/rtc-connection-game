@@ -32,6 +32,10 @@ main {
   font-size: 0.875rem;
 }
 
+.outsite_container {
+  display: flex;
+  flex-direction: column;
+}
 .create_room_button {
   display: flex;
   justify-content: center;
@@ -65,4 +69,19 @@ main {
 .keep_open_warn {
   color: var(--foreground-color);
   font-size: 12px;
+}
+
+.cancel_button {
+  all: unset;
+  margin-top: 16px;
+  text-align: center;
+  padding: 8px;
+  border-radius: 16px;
+  cursor: default;
+  color: var(--primary-bg-color);
+  transition: background-color 0.2s ease;
+}
+
+.cancel_button:hover {
+  background-color: oklch(0.9179 0.0215 51.5);
 }

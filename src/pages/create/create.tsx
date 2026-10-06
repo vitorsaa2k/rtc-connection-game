@@ -3,6 +3,7 @@ import "./create.css";
 import { CreateForm } from "./createForm/createForm";
 import { useRTC } from "../../hooks/useRTC";
 import { base64UrlEncode } from "../../utils/base64";
+import { Link } from "@tanstack/react-router";
 
 export function Create() {
   const [isCreating, setIsCreating] = useState<boolean>(false);
@@ -21,11 +22,13 @@ export function Create() {
 
   return (
     <main>
-      <div className="game_form_container">
+      <div className="outsite_container">
         {isCreating ? (
-          <CreateForm encodedOffer={encodedOffer} />
+          <div className="game_form_container">
+            <CreateForm encodedOffer={encodedOffer} />
+          </div>
         ) : (
-          <>
+          <div className="game_form_container">
             <div className="game_title_container">
               <p className="title">Create Game</p>
               <p className="desc">
@@ -40,12 +43,14 @@ export function Create() {
             >
               Create Room
             </button>
-          </>
+            <p className="keep_open_warn">
+              Keep this tab open while your friend joins.
+            </p>
+          </div>
         )}
-
-        <p className="keep_open_warn">
-          Keep this tab open while your friend joins.
-        </p>
+        <Link className="cancel_button" to="/">
+          Cancel
+        </Link>
       </div>
     </main>
   );
