@@ -14,7 +14,7 @@ export function FriendConnection() {
           screen
         </p>
       </div>
-      <Link to="/" className="friend_connection_button">
+      <Link to="/connect" className="friend_connection_button">
         I have my friend's answer
         <RightArrowIcon />
       </Link>
