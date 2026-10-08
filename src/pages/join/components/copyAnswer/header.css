@@ -1,0 +1,11 @@
+h1 {
+  margin: 0;
+}
+
+.copy_answer_header {
+  color: var(--foreground-color);
+}
+
+.copy_answer_desc {
+  font-size: 0.875rem;
+}

@@ -1,17 +1,24 @@
 import { useState } from "react";
 import "./join.css";
 import { PasteOffer } from "./components/pasteOffer";
-import { useRTC } from "../../hooks/useRTC";
+import { CopyAnswer } from "./components/copyAnswer/copyAnswer";
+import { ConnectionState } from "../../components/connectionState/connectionState";
 
 export function Join() {
   const [isJoining, setIsJoining] = useState<boolean>(false);
-  const [isGeneratingAnswer, setIsGeneratingAnswer] = useState<boolean>(false);
   const [encodedAnswer, setEncodedAnswer] = useState<string>("");
-  const rtc = useRTC();
   return (
     <main>
+      {isJoining && <ConnectionState />}
       <div className="join_form_container">
-        <PasteOffer />
+        {isJoining ? (
+          <CopyAnswer encodedAnswer={encodedAnswer} />
+        ) : (
+          <PasteOffer
+            setEncodedAnswer={setEncodedAnswer}
+            setIsJoining={setIsJoining}
+          />
+        )}
       </div>
     </main>
   );
