@@ -10,6 +10,7 @@ import { CheckIcon } from "../../../components/icons/check";
 
 export function CreateForm({ encodedOffer }: { encodedOffer: string }) {
   const [isCopied, setIsCopied] = useState<boolean>(false);
+  const offerLink = `${window.location.protocol}//${window.location.host}/join#offer=${encodedOffer}`;
 
   async function copyEncodedOfferToClipboard() {
     try {
@@ -25,10 +26,8 @@ export function CreateForm({ encodedOffer }: { encodedOffer: string }) {
   return (
     <div className="create_form_container">
       <CreateFormTitle />
-      <CopyLink
-        generatedLink={`${window.location.protocol}//${window.location.host}/join#offer=${encodedOffer}`}
-      />
-      <QRCode />
+      <CopyLink generatedLink={offerLink} />
+      <QRCode offerLink={offerLink} />
       <FriendConnection />
       <button
         className="copy_invite_data_button"

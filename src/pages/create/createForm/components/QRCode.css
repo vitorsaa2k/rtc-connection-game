@@ -1,0 +1,18 @@
+.qr_code_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.qr_code {
+  display: flex;
+  justify-content: center;
+  background-color: var(--primary-bg-color-muted);
+  padding: 12px;
+  border-radius: 18px;
+  border: solid 1px var(--primary-color);
+}
+
+.qr_code_subtitle {
+  color: var(--foreground-color);
+  font-weight: 600;
+}
