@@ -2,9 +2,10 @@ import "./QRCode.css";
 
 import QRCodeInstance from "qrcode";
 import { useEffect, useState } from "react";
+import { Spinner } from "../../../../components/icons/spinner";
 
 export function QRCode({ offerLink }: { offerLink: string }) {
-  const [qr, setQr] = useState("");
+  const [qr, setQr] = useState<string | null>();
   useEffect(() => {
     QRCodeInstance.toDataURL(offerLink, {
       errorCorrectionLevel: "M",
@@ -16,7 +17,7 @@ export function QRCode({ offerLink }: { offerLink: string }) {
     <div className="qr_code_container">
       <p className="qr_code_subtitle">Or scan this QR code</p>
       <div className="qr_code">
-        <img src={qr} alt="QR Code" />
+        {qr ? <img src={qr ?? undefined} alt="QR Code" /> : <Spinner />}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@
 }
 
 .qr_code {
-  display: flex;
+  display: grid;
   justify-content: center;
   background-color: var(--primary-bg-color-muted);
   padding: 12px;
@@ -15,4 +15,8 @@
 .qr_code_subtitle {
   color: var(--foreground-color);
   font-weight: 600;
+}
+
+.qr_code_spinner {
+  background-color: var(--primary-color);
 }
