@@ -10,5 +10,5 @@ For this i decided to build a "How well do you know your friend?" game.
 - [x] Create a handler for receiving/sending messages using the WebRTC peer connection
 - [x]  Create and stylize home page
 - [x]  Create and stylize create game page
-- [ ]  Create and stylize join game page
+- [x]  Create and stylize join game page
 - [ ]  Create and stylize the page for playing the game (where the questions will be shown)
