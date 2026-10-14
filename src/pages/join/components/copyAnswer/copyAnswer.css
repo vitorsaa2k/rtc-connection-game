@@ -3,3 +3,7 @@
   flex-direction: column;
   gap: 12px;
 }
+
+.awaiting_header {
+  color: var(--foreground-color);
+}

@@ -4,9 +4,11 @@ import { CopyIcon } from "../../../../components/icons/copy";
 import "./copyAnswer.css";
 import { CopyLink } from "./copyLink";
 import { CopyAnswerHeader } from "./header";
+import { useRTC } from "../../../../hooks/useRTC";
 
 export function CopyAnswer({ encodedAnswer }: { encodedAnswer: string }) {
   const [isCopied, setIsCopied] = useState<boolean>(false);
+  const rtc = useRTC();
 
   async function copyAnswerToClipboard() {
     try {
@@ -21,25 +23,35 @@ export function CopyAnswer({ encodedAnswer }: { encodedAnswer: string }) {
   }
   return (
     <div className="copy_answer_container">
-      <CopyAnswerHeader />
-      <CopyLink
-        generatedLink={`${window.location.protocol}//${window.location.host}/connect#answer=${encodedAnswer}`}
-      />
-      <button
-        onClick={copyAnswerToClipboard}
-        className="copy_answer_data_button"
-      >
-        {isCopied ? (
-          <>
-            <CheckIcon className="copy_link_check_icon" /> Data has been copied!
-          </>
-        ) : (
-          <>
-            <CopyIcon className="copy_link_copy_icon" />
-            Copy answer data
-          </>
-        )}
-      </button>
+      {rtc.isConnected ? (
+        <div className="awaiting_header">
+          <h1>You're all set!</h1>
+          <p>Awaiting your friend start the game</p>
+        </div>
+      ) : (
+        <>
+          <CopyAnswerHeader />
+          <CopyLink
+            generatedLink={`${window.location.protocol}//${window.location.host}/connect#answer=${encodedAnswer}`}
+          />
+          <button
+            onClick={copyAnswerToClipboard}
+            className="copy_answer_data_button"
+          >
+            {isCopied ? (
+              <>
+                <CheckIcon className="copy_link_check_icon" /> Data has been
+                copied!
+              </>
+            ) : (
+              <>
+                <CopyIcon className="copy_link_copy_icon" />
+                Copy answer data
+              </>
+            )}
+          </button>
+        </>
+      )}
     </div>
   );
 }
