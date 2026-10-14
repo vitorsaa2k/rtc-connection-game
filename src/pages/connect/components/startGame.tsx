@@ -1,7 +1,16 @@
-import { Link } from "@tanstack/react-router";
+import { useNavigate } from "@tanstack/react-router";
+import { useRTC } from "../../../hooks/useRTC";
 import "./startGame.css";
 
 export function StartGame() {
+  const navigate = useNavigate();
+  const rtc = useRTC();
+  async function start() {
+    rtc.sendMessage(JSON.stringify({ type: "start" }));
+    await navigate({
+      to: "/game",
+    });
+  }
   return (
     <div className="start_game_container">
       <div className="start_game_header">
@@ -10,9 +19,9 @@ export function StartGame() {
           Both browsers are talking directly to each other. Let's play.
         </p>
       </div>
-      <Link to="/game" className="start_game_button">
+      <button onClick={start} className="start_game_button">
         Start Game
-      </Link>
+      </button>
     </div>
   );
 }
