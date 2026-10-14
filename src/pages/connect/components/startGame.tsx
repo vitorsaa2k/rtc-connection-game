@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import "./startGame.css";
 
 export function StartGame() {
@@ -9,7 +10,9 @@ export function StartGame() {
           Both browsers are talking directly to each other. Let's play.
         </p>
       </div>
-      <button className="start_game_button">Start Game</button>
+      <Link to="/game" className="start_game_button">
+        Start Game
+      </Link>
     </div>
   );
 }

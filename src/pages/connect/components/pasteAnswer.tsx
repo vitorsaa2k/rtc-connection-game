@@ -35,7 +35,7 @@ export function PasteAnswer({
         </p>
       </div>
       <label className="paste_answer_container">
-        <p className="paste_answer_label">Paste your friend answer here</p>
+        <p className="paste_answer_label">Paste your friend's answer here</p>
         <textarea
           onChange={(e) => setAnswer(e.currentTarget.value)}
           className="paste_answer_input"
