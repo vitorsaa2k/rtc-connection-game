@@ -1,11 +1,14 @@
 import { useNavigate } from "@tanstack/react-router";
 import { useRTC } from "../../../hooks/useRTC";
 import "./startGame.css";
+import { useGameState } from "../../../hooks/useGameState";
 
 export function StartGame() {
+  const [, dispatch] = useGameState();
   const navigate = useNavigate();
   const rtc = useRTC();
   async function start() {
+    dispatch({ type: "START" });
     rtc.sendMessage(JSON.stringify({ type: "start" }));
     await navigate({
       to: "/game",
