@@ -28,6 +28,7 @@ export function Question() {
     });
     dispatch({ type: "INCREASE_TOTAL_ANSWERED" });
     rtc.sendMessage(JSON.stringify({ type: "answer", answer }));
+    setSelectedAnswer(null);
   }
   return (
     <div className="question_container">
