@@ -8,14 +8,14 @@ import { CheckIcon } from "../../../../components/icons/check";
 import { RightArrowIcon } from "../../../../components/icons/right";
 
 export function Question() {
-  const [selectedAnswer, setSelectedAnswer] = useState<null | number>();
+  const [selectedAnswer, setSelectedAnswer] = useState<null | number>(null);
   const [state, dispatch] = useGameState();
   const rtc = useRTC();
   function selectAnswer(index: number) {
     setSelectedAnswer(index);
   }
   function submitAnswer() {
-    if (!selectedAnswer) return console.warn("Select an answer first");
+    if (selectedAnswer === null) return console.warn("Select an answer first");
     const selectedOption =
       questions[state.totalAnswered].options[selectedAnswer];
     const answer = {
