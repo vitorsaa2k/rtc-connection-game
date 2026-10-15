@@ -1,0 +1,28 @@
+.progress_bar_container {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 24px;
+}
+
+.progress_text {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.progress_bar_track {
+  height: 8px;
+  background: color-mix(in srgb, var(--primary-color) 15%, transparent);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress_bar_fill {
+  height: 100%;
+  background: var(--primary-color);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  width: 0%;
+}
