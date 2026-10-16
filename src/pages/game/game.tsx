@@ -20,7 +20,7 @@ export function Game() {
   return (
     <div className="game_container">
       <ProgressBar />
-      <Question />
+      <Question key={state.totalAnswered} />
     </div>
   );
 }
