@@ -1,0 +1,107 @@
+.results_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 32px;
+  padding: 0 16px 48px;
+}
+
+.results_waiting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 48px;
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.results_score_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--primary-bg-color);
+  border-radius: 24px;
+  padding: 24px 48px;
+  box-shadow: 0 20px 50px -24px oklch(10% 0.05 262/0.8);
+}
+
+.results_score {
+  color: var(--foreground-color);
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.results_score_label {
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.results_list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 640px;
+}
+
+.result_card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: var(--primary-bg-color);
+  border: 2px solid transparent;
+  border-radius: 18px;
+  padding: 12px;
+}
+
+.matched_result {
+  border-color: var(--primary-color);
+}
+
+.mismatched_result {
+  border-color: var(--secondary-color);
+}
+
+.result_icon {
+  background-color: var(--primary-color);
+  padding: 4px;
+  border-radius: 9999px;
+  fill: var(--primary-bg-color-muted);
+}
+
+.mismatched_result .result_icon {
+  background-color: var(--secondary-color);
+  fill: var(--foreground-color);
+}
+
+.result_question {
+  color: var(--foreground-color);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.result_answers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.result_answer {
+  background-color: var(--primary-bg-color-muted);
+  border-radius: 12px;
+  padding: 8px;
+  color: var(--foreground-color);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.result_answer_label {
+  color: var(--primary-color);
+}

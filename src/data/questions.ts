@@ -173,7 +173,7 @@ export const questions = [
     ],
   },
   {
-    questionId: 15,
+    questionId: 16,
     question:
       "Se eu pudesse morar em qualquer lugar do mundo, onde eu moraria?",
     options: [
@@ -185,7 +185,7 @@ export const questions = [
     ],
   },
   {
-    questionId: 16,
+    questionId: 17,
     question: "Quão próximos nós somos?",
     options: [
       "Estranhos",

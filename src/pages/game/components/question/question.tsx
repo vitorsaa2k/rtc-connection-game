@@ -28,6 +28,9 @@ export function Question() {
     });
     dispatch({ type: "INCREASE_TOTAL_ANSWERED" });
     rtc.sendMessage(JSON.stringify({ type: "answer", answer }));
+    if (state.totalAnswered + 1 >= questions.length) {
+      rtc.sendMessage(JSON.stringify({ type: "finish" }));
+    }
     setSelectedAnswer(null);
   }
   return (
