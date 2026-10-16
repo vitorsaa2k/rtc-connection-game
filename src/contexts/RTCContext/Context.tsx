@@ -9,6 +9,7 @@ export interface RTCContext {
   setRemoteAnswer: (remmoteAnswer: RTCSessionDescriptionInit) => Promise<void>
   addIceCandidate: (candidate: RTCIceCandidateInit) => Promise<void>
   sendMessage: (message: string) => void
+  closeConnection: () => void
 }
 
 

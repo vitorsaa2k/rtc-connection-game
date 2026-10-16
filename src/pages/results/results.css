@@ -43,6 +43,27 @@
   text-transform: uppercase;
 }
 
+.home_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--foreground-color);
+  background-color: var(--primary-color);
+  width: 10rem;
+  height: 3rem;
+  margin-top: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 18px;
+  font-weight: 600;
+  font-size: 18px;
+  transition: background-color 0.2s ease;
+}
+
+.home_button:hover {
+  background-color: #23969e;
+}
+
 .results_list {
   display: flex;
   flex-direction: column;

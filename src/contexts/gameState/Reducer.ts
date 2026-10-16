@@ -6,6 +6,8 @@ export function gameStateReducer(state: GameState, action: GameStateActions): Ga
       return { ...state, started: true }
     case "FINISH":
       return { ...state, finished: true }
+    case "RESET":
+      return initialGameState
     case "INCREASE_TOTAL_ANSWERED":
       return { ...state, totalAnswered: state.totalAnswered + 1 }
     case "INCREASE_PLAYER2_TOTAL_ANSWERED":

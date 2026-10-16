@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { useGameState } from "../../hooks/useGameState";
+import { useRTC } from "../../hooks/useRTC";
 import { questions } from "../../data/questions";
 import { Spinner } from "../../components/icons/spinner";
 import { CheckIcon } from "../../components/icons/check";
@@ -8,14 +9,21 @@ import { XIcon } from "../../components/icons/x";
 import "./results.css";
 
 export function Results() {
-  const [state] = useGameState();
+  const [state, dispatch] = useGameState();
   const navigate = useNavigate();
+  const { isConnected, closeConnection } = useRTC();
 
   useEffect(() => {
-    if (state.totalAnswered < questions.length) {
+    if (isConnected && state.totalAnswered < questions.length) {
       navigate({ to: "/game" });
     }
-  }, [state.totalAnswered, navigate]);
+  }, [isConnected, state.totalAnswered, navigate]);
+
+  async function goHome() {
+    await navigate({ to: "/" });
+    closeConnection();
+    dispatch({ type: "RESET" });
+  }
 
   if (state.totalAnswered < questions.length) return null;
 
@@ -47,6 +55,9 @@ export function Results() {
           {score} / {results.length}
         </p>
         <p className="results_score_label">answers matched</p>
+        <button onClick={goHome} className="home_button">
+          Home
+        </button>
       </div>
       <div className="results_list">
         {results.map((result, i) => (

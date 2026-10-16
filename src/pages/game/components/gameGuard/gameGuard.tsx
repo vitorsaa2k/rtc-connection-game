@@ -6,15 +6,17 @@ import { Spinner } from "../../../../components/icons/spinner";
 import "./gameGuard.css";
 
 export function GameGuard({ children }: { children: React.ReactNode }) {
-  const [state] = useGameState();
-  const { isConnected } = useRTC();
+  const [state, dispatch] = useGameState();
+  const { isConnected, closeConnection } = useRTC();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!isConnected) {
+      dispatch({ type: "RESET" });
+      closeConnection();
       navigate({ to: "/create" });
     }
-  }, [isConnected, navigate]);
+  }, [isConnected, navigate, dispatch, closeConnection]);
 
   if (!isConnected) {
     return null;

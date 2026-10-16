@@ -14,6 +14,7 @@ export interface GameState {
 export type GameStateActions =
   | { type: "START" }
   | { type: "FINISH" }
+  | { type: "RESET" }
   | { type: "INCREASE_TOTAL_ANSWERED" }
   | { type: "INCREASE_PLAYER2_TOTAL_ANSWERED" }
   | { type: "ANSWER", payload: { questionId: number, answer: string } }

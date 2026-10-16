@@ -150,6 +150,15 @@ export function RTCContextProvider({
     console.log(peerRef.current);
   }, []);
 
+  const closeConnection = useCallback(() => {
+    channelRef.current?.close();
+    peerRef.current?.close();
+    channelRef.current = null;
+    peerRef.current = null;
+    setMessages([]);
+    setIsConnected(false);
+  }, []);
+
   useEffect(() => {
     return () => {
       channelRef.current?.close();
@@ -168,6 +177,7 @@ export function RTCContextProvider({
         setRemoteAnswer,
         addIceCandidate,
         sendMessage,
+        closeConnection,
       }}
     >
       {children}
