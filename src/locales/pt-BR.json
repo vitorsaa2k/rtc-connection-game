@@ -1,0 +1,15 @@
+{
+  "home": {
+    "homeTitle": "Você realmente conhece seu amigo?",
+    "homeDesc": "Um responde as perguntas honestamente, o outro tenta adivinhar o que foi escolhido.",
+    "homeCreateButton": "Criar Jogo",
+    "homeJoinButton": "Entrar no Jogo",
+    "noAccountCardTitle": "Sem contas",
+    "noAccountCardDesc": "Não precisa se registrar, não guardamos nenhum dado.",
+    "justLinkCardTitle": "Somente um link",
+    "justLinkCardDesc": "Crie um jogo e envie o link para seu amigo.",
+    "peerCardTitle": "Ponta a ponta",
+    "peerCardDesc": "Seus navegadores conversam diretamente entre si.",
+    "footerText": "Esse jogo roda totalmente nos seus navegadores por meio de uma conexão ponta a ponta. Nenhum servidor mantem suas respostas."
+  }
+}

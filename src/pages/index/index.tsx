@@ -4,36 +4,35 @@ import { Card } from "./card";
 import { ShieldIcon } from "../../components/icons/shield";
 import { LinkIcon } from "../../components/icons/link";
 import { UsersIcon } from "../../components/icons/users";
+import { useTranslation } from "react-i18next";
 
 export function Index() {
+  const { t } = useTranslation();
   return (
     <main>
       <div className="home_container">
         <div className="home_title_container">
-          <p className="home_title">How well do you know your friend?</p>
-          <p className="home_desc">
-            One answer the questions honestly, the other try to guess what the
-            other one picked. The score tells the truth.
-          </p>
+          <p className="home_title">{t("home.homeTitle")}</p>
+          <p className="home_desc">{t("home.homeDesc")}</p>
         </div>
         <div className="initial_game_buttons_container">
           <Link to="/create" className="create_game_button">
-            Create Game
+            {t("home.homeCreateButton")}
           </Link>
           <Link to="/join" className="join_game_button">
-            Join Game
+            {t("home.homeJoinButton")}
           </Link>
         </div>
         <div className="cards_container">
           <Card
             icon={<ShieldIcon />}
-            title="No account"
-            description="Nothing to sign up for, nothing stored anywhere."
+            title={t("home.noAccountCardTitle")}
+            description={t("home.noAccountCardDesc")}
           />
           <Card
             icon={<LinkIcon className="card_icon" />}
-            title="Just a link"
-            description="Create a game and send the link to your friend."
+            title={t("home.justLinkCardTitle")}
+            description={t("home.justLinkCardDesc")}
           />
           <Card
             icon={<UsersIcon />}

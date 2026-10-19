@@ -1,0 +1,26 @@
+{
+  "home": {
+    "homeTitle": "How well do you know your friend?",
+    "homeDesc": "One answer the questions honestly, the other try to guess what the other one picked. The score tells the truth.",
+    "homeCreateButton": "Create Game",
+    "homeJoinButton": "Join Game",
+    "noAccountCardTitle": "No account",
+    "noAccountCardDesc": "Nothing to sign up for, nothing stored anywhere.",
+    "justLinkCardTitle": "Just a link",
+    "justLinkCardDesc": "Create a game and send the link to your friend.",
+    "peerCardTitle": "Peer-to-peer",
+    "peerCardDesc": "Your two browsers talk directly to each other.",
+    "footerText": "This game runs entirely in your browsers over a direct peer-to-peer connection. No server keeps your answers.",
+    "play": "Play",
+    "score": "Score",
+    "submitAnswer": "Submit answer"
+  },
+
+  "create": {
+    "createInitialTitle": "Create Game",
+    "createInitialDesc": "We'll set up a private room in your browser and give you a link to send to your friend.",
+    "createInitialButton": "Create Room",
+    "createInitialFooter": "Keep this tab open while your friend joins.",
+    "createCancelButton": "Cancel"
+  }
+}
