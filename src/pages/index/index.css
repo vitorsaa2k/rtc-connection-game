@@ -7,7 +7,10 @@ main {
 }
 
 .home_container {
+  width: 100%;
   max-width: 724px;
+  box-sizing: border-box;
+  padding: 0 16px;
 }
 
 .home_title_container {
@@ -119,4 +122,14 @@ main {
   font-size: 12px;
   text-align: center;
   color: var(--primary-bg-color);
+}
+
+@media (max-width: 640px) {
+  .cards_container {
+    flex-direction: column;
+  }
+
+  .card {
+    flex: 1 1 auto;
+  }
 }
