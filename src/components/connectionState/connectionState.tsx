@@ -2,15 +2,18 @@ import "./connectionState.css";
 import { useRTC } from "../../hooks/useRTC";
 import { WifiIcon } from "../icons/wifi";
 import { Spinner } from "../icons/spinner";
+import { useTranslation } from "react-i18next";
 
 export function ConnectionState() {
+  const { t } = useTranslation();
   const rtc = useRTC();
   return (
     <div className="connection_state_container">
       <div className="connection_state">
         {rtc.isConnected ? (
           <>
-            <WifiIcon className="connection_state_wifi_icon" /> <p>Connected</p>
+            <WifiIcon className="connection_state_wifi_icon" />{" "}
+            <p>{t("connectionState.connected")}</p>
           </>
         ) : (
           <>
@@ -21,7 +24,7 @@ export function ConnectionState() {
                 background: "var(--foreground-color)",
               }}
             />
-            <p>Waiting for your friend</p>
+            <p>{t("connectionState.connectionStateWaiting")}</p>
           </>
         )}
       </div>

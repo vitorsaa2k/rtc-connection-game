@@ -1,21 +1,22 @@
 import { RightArrowIcon } from "../../../../components/icons/right";
 import "./friendConnection.css";
 import { Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 
 export function FriendConnection() {
+  const { t } = useTranslation();
   return (
     <div className="friend_connection_container">
       <div className="friend_connection_header">
         <p className="friend_connection_title">
-          Waiting for your friend to connect...
+          {t("createForm.friendConnectionTitle")}
         </p>
         <p className="friend_connection_desc">
-          When they send their answer back, open it or paste it on the connect
-          screen
+          {t("createForm.friendConnectionDesc")}
         </p>
       </div>
       <Link to="/connect" className="friend_connection_button">
-        I have my friend's answer
+        {t("createForm.friendConnectionButton")}
         <RightArrowIcon />
       </Link>
     </div>

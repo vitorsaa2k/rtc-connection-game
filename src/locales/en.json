@@ -1,4 +1,9 @@
 {
+  "common": {
+    "copied": "Copied!",
+    "copyLink": "Copy link"
+  },
+
   "home": {
     "homeTitle": "How well do you know your friend?",
     "homeDesc": "One answer the questions honestly, the other try to guess what the other one picked. The score tells the truth.",
@@ -10,10 +15,7 @@
     "justLinkCardDesc": "Create a game and send the link to your friend.",
     "peerCardTitle": "Peer-to-peer",
     "peerCardDesc": "Your two browsers talk directly to each other.",
-    "footerText": "This game runs entirely in your browsers over a direct peer-to-peer connection. No server keeps your answers.",
-    "play": "Play",
-    "score": "Score",
-    "submitAnswer": "Submit answer"
+    "footerText": "This game runs entirely in your browsers over a direct peer-to-peer connection. No server keeps your answers."
   },
 
   "create": {
@@ -22,5 +24,260 @@
     "createInitialButton": "Create Room",
     "createInitialFooter": "Keep this tab open while your friend joins.",
     "createCancelButton": "Cancel"
+  },
+
+  "createForm": {
+    "createFormTitle": "Your game is ready!",
+    "createFormDesc": "Send this link to your friend. They'll send an answer back to finish the connection.",
+    "copyLinkTitle": "Send this link to your friend.",
+    "copyInviteDataButton": "Copy invite data instead",
+    "qrCodeSubtitle": "Or scan this QR code",
+    "qrCodeAlt": "QR Code",
+    "friendConnectionTitle": "Waiting for your friend to connect...",
+    "friendConnectionDesc": "When they send their answer back, open it or paste it on the connect screen",
+    "friendConnectionButton": "I have my friend's answer",
+    "advancedConnectionDetails": "Advanced connection details"
+  },
+
+  "join": {
+    "pasteOfferTitle": "Got an invite link?",
+    "pasteOfferDesc": "Open the link your friend sent you, or paste it below to join their game.",
+    "pasteOfferPlaceholder": "Paste your friend's invite link here",
+    "pasteOfferButton": "Continue",
+    "backToStart": "Back to start",
+    "copyAnswerReadyTitle": "You're almost ready!",
+    "copyAnswerReadyDesc": "Send this answer back to your friend so they can finish the connection.",
+    "copyAnswerAllSetTitle": "You're all set!",
+    "copyAnswerAllSetDesc": "Waiting for your friend to start the game",
+    "copyAnswerLinkTitle": "Send this answer back to your friend.",
+    "linkCopied": "Link has been copied!",
+    "dataCopied": "Data has been copied!",
+    "copyAnswerDataButton": "Copy answer data"
+  },
+
+  "connect": {
+    "connectTitle": "Connect to your friend",
+    "connectDesc": "Open the answer link your friend sent, or paste their answer below.",
+    "pasteAnswerLabel": "Paste your friend's answer here",
+    "pasteAnswerPlaceholder": "Paste the answer link or answer data",
+    "connectButton": "Connect",
+    "backToRoom": "Back to my room",
+    "startGameTitle": "You're connected! 🎉",
+    "startGameDesc": "Both browsers are talking directly to each other. Let's play.",
+    "startGameButton": "Start Game"
+  },
+
+  "game": {
+    "gameGuardWaiting": "Waiting for host to start...",
+    "progressText": "Question {{current}} of {{total}}",
+    "sendButton": "Send"
+  },
+
+  "results": {
+    "resultsWaiting": "Waiting for your friend to finish...",
+    "answersMatched": "answers matched",
+    "homeButton": "Home",
+    "youLabel": "You:",
+    "friendLabel": "Friend:"
+  },
+
+  "connectionState": {
+    "connected": "Connected",
+    "connectionStateWaiting": "Waiting for your friend"
+  },
+
+  "questions": {
+    "1": {
+      "question": "What's my favorite color?",
+      "options": {
+        "0": "Blue",
+        "1": "Red",
+        "2": "Green",
+        "3": "Yellow",
+        "4": "Purple",
+        "5": "Pink",
+        "6": "Black",
+        "7": "White"
+      }
+    },
+    "2": {
+      "question": "What's my favorite music genre?",
+      "options": {
+        "0": "Hip Hop/Rap",
+        "1": "K Pop",
+        "2": "Phonk",
+        "3": "Funk",
+        "4": "Pop",
+        "5": "Rock"
+      }
+    },
+    "3": {
+      "question": "How would player1 describe player2 in one word?",
+      "options": {
+        "0": "Smart",
+        "1": "Clumsy",
+        "2": "Cute",
+        "3": "Lazy",
+        "4": "Beautiful",
+        "5": "Funny",
+        "6": "Dumb"
+      }
+    },
+    "4": {
+      "question": "Which month is my birthday in?",
+      "options": {
+        "0": "January",
+        "1": "February",
+        "2": "March",
+        "3": "April",
+        "4": "May",
+        "5": "June",
+        "6": "July",
+        "7": "August",
+        "8": "September",
+        "9": "October",
+        "10": "November",
+        "11": "December"
+      }
+    },
+    "5": {
+      "question": "What's my biggest fear?",
+      "options": {
+        "0": "Heights",
+        "1": "Darkness",
+        "2": "Insects",
+        "3": "Death",
+        "4": "Failure",
+        "5": "Loneliness",
+        "6": "Public speaking",
+        "7": "Health"
+      }
+    },
+    "6": {
+      "question": "What do I want to be when I grow up?",
+      "options": {
+        "0": "Doctor",
+        "1": "Teacher",
+        "2": "Athlete",
+        "3": "YouTuber",
+        "4": "IT",
+        "5": "Police officer",
+        "6": "Pilot",
+        "7": "Lawyer",
+        "8": "Engineer"
+      }
+    },
+    "7": {
+      "question": "What's my favorite type of food?",
+      "options": {
+        "0": "Italian🍕",
+        "1": "Chinese🏮",
+        "2": "Japanese🍜",
+        "3": "French🥐",
+        "4": "American🍔",
+        "5": "Mexican🌮",
+        "6": "Brazilian🥩"
+      }
+    },
+    "8": {
+      "question": "Am I a night person?",
+      "options": {
+        "0": "Yes",
+        "1": "No"
+      }
+    },
+    "9": {
+      "question": "What do I value most in a friendship?",
+      "options": {
+        "0": "Loyalty",
+        "1": "Honesty",
+        "2": "Responsibility",
+        "3": "Authenticity",
+        "4": "Trust",
+        "5": "Support"
+      }
+    },
+    "10": {
+      "question": "What's my favorite type of snack?",
+      "options": {
+        "0": "Savory",
+        "1": "Sweet",
+        "2": "Healthy"
+      }
+    },
+    "11": {
+      "question": "Which of these ways to spend time would I choose?",
+      "options": {
+        "0": "Staying home watching a movie",
+        "1": "Going to a party",
+        "2": "Having dinner with a friend",
+        "3": "Playing a board game with family",
+        "4": "Working/being productive"
+      }
+    },
+    "12": {
+      "question": "What's my favorite hobby?",
+      "options": {
+        "0": "Reading",
+        "1": "Video games",
+        "2": "Playing sports",
+        "3": "Cooking",
+        "4": "Outdoors/camping",
+        "5": "Fitness",
+        "6": "Arts"
+      }
+    },
+    "13": {
+      "question": "What's my favorite season?",
+      "options": {
+        "0": "Spring",
+        "1": "Summer",
+        "2": "Fall",
+        "3": "Winter",
+        "4": "None"
+      }
+    },
+    "14": {
+      "question": "What makes me the most angry?",
+      "options": {
+        "0": "Rudeness",
+        "1": "Loud music",
+        "2": "Chewing loudly",
+        "3": "Being interrupted",
+        "4": "Bad drivers",
+        "5": "Dry texts",
+        "6": "Mess"
+      }
+    },
+    "15": {
+      "question": "What's my favorite movie genre?",
+      "options": {
+        "0": "Horror/Thriller",
+        "1": "Romance/Comedy",
+        "2": "Sci-fi/Fantasy",
+        "3": "Documentary/True crime",
+        "4": "Action"
+      }
+    },
+    "16": {
+      "question": "If I could live anywhere in the world, where would I live?",
+      "options": {
+        "0": "Rural/Farmland",
+        "1": "Big city",
+        "2": "Beach/Resort",
+        "3": "Mountain/Cabin",
+        "4": "Suburbs"
+      }
+    },
+    "17": {
+      "question": "How close are we?",
+      "options": {
+        "0": "Strangers",
+        "1": "Acquaintances",
+        "2": "Friends",
+        "3": "Close friends",
+        "4": "Best friends"
+      }
+    }
   }
 }

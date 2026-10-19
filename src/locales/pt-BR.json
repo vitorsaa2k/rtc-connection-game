@@ -1,7 +1,12 @@
 {
+  "common": {
+    "copied": "Copiado!",
+    "copyLink": "Copiar link"
+  },
+
   "home": {
     "homeTitle": "Você realmente conhece seu amigo?",
-    "homeDesc": "Um responde as perguntas honestamente, o outro tenta adivinhar o que foi escolhido.",
+    "homeDesc": "Um responde as perguntas honestamente, o outro tenta adivinhar o que foi escolhido. A pontuação diz a verdade.",
     "homeCreateButton": "Criar Jogo",
     "homeJoinButton": "Entrar no Jogo",
     "noAccountCardTitle": "Sem contas",
@@ -10,6 +15,269 @@
     "justLinkCardDesc": "Crie um jogo e envie o link para seu amigo.",
     "peerCardTitle": "Ponta a ponta",
     "peerCardDesc": "Seus navegadores conversam diretamente entre si.",
-    "footerText": "Esse jogo roda totalmente nos seus navegadores por meio de uma conexão ponta a ponta. Nenhum servidor mantem suas respostas."
+    "footerText": "Esse jogo roda totalmente nos seus navegadores por meio de uma conexão ponta a ponta. Nenhum servidor mantém suas respostas."
+  },
+
+  "create": {
+    "createInitialTitle": "Criar Jogo",
+    "createInitialDesc": "Vamos criar uma sala privada no seu navegador e te dar um link para enviar ao seu amigo.",
+    "createInitialButton": "Criar Sala",
+    "createInitialFooter": "Mantenha esta aba aberta enquanto seu amigo entra.",
+    "createCancelButton": "Cancelar"
+  },
+
+  "createForm": {
+    "createFormTitle": "Seu jogo está pronto!",
+    "createFormDesc": "Envie este link para seu amigo. Ele vai te mandar uma resposta para concluir a conexão.",
+    "copyLinkTitle": "Envie este link para seu amigo.",
+    "copyInviteDataButton": "Copiar dados do convite",
+    "qrCodeSubtitle": "Ou escaneie este QR code",
+    "qrCodeAlt": "Código QR",
+    "friendConnectionTitle": "Aguardando seu amigo se conectar...",
+    "friendConnectionDesc": "Quando ele enviar a resposta, abra ou cole na tela de conectar",
+    "friendConnectionButton": "Tenho a resposta do meu amigo",
+    "advancedConnectionDetails": "Detalhes avançados da conexão"
+  },
+
+  "join": {
+    "pasteOfferTitle": "Recebeu um link de convite?",
+    "pasteOfferDesc": "Abra o link que seu amigo enviou ou cole abaixo para entrar no jogo dele.",
+    "pasteOfferPlaceholder": "Cole o link de convite do seu amigo aqui",
+    "pasteOfferButton": "Continuar",
+    "backToStart": "Voltar ao início",
+    "copyAnswerReadyTitle": "Você está quase pronto!",
+    "copyAnswerReadyDesc": "Envie esta resposta para seu amigo para que ele conclua a conexão.",
+    "copyAnswerAllSetTitle": "Tudo pronto!",
+    "copyAnswerAllSetDesc": "Aguardando seu amigo iniciar o jogo",
+    "copyAnswerLinkTitle": "Envie esta resposta de volta para seu amigo.",
+    "linkCopied": "Link copiado!",
+    "dataCopied": "Dados copiados!",
+    "copyAnswerDataButton": "Copiar dados da resposta"
+  },
+
+  "connect": {
+    "connectTitle": "Conecte-se ao seu amigo",
+    "connectDesc": "Abra o link de resposta que seu amigo enviou ou cole a resposta abaixo.",
+    "pasteAnswerLabel": "Cole a resposta do seu amigo aqui",
+    "pasteAnswerPlaceholder": "Cole o link ou os dados da resposta",
+    "connectButton": "Conectar",
+    "backToRoom": "Voltar para minha sala",
+    "startGameTitle": "Vocês estão conectados! 🎉",
+    "startGameDesc": "Os dois navegadores estão conversando diretamente entre si. Vamos jogar.",
+    "startGameButton": "Começar Jogo"
+  },
+
+  "game": {
+    "gameGuardWaiting": "Aguardando o anfitrião iniciar...",
+    "progressText": "Pergunta {{current}} de {{total}}",
+    "sendButton": "Enviar"
+  },
+
+  "results": {
+    "resultsWaiting": "Aguardando seu amigo terminar...",
+    "answersMatched": "respostas iguais",
+    "homeButton": "Início",
+    "youLabel": "Você:",
+    "friendLabel": "Amigo:"
+  },
+
+  "connectionState": {
+    "connected": "Conectado",
+    "connectionStateWaiting": "Aguardando seu amigo"
+  },
+
+  "questions": {
+    "1": {
+      "question": "Qual é minha cor favorita?",
+      "options": {
+        "0": "Azul",
+        "1": "Vermelho",
+        "2": "Verde",
+        "3": "Amarelo",
+        "4": "Roxo",
+        "5": "Rosa",
+        "6": "Preto",
+        "7": "Branco"
+      }
+    },
+    "2": {
+      "question": "Qual é meu gênero de música favorito?",
+      "options": {
+        "0": "Hip Hop/Rap",
+        "1": "K Pop",
+        "2": "Phonk",
+        "3": "Funk",
+        "4": "Pop",
+        "5": "Rock"
+      }
+    },
+    "3": {
+      "question": "Como player1 descreveria player2 em uma palavra?",
+      "options": {
+        "0": "Inteligente",
+        "1": "Desajeitado(a)",
+        "2": "Fofo(a)",
+        "3": "Preguiçoso(a)",
+        "4": "Lindo(a)",
+        "5": "Engraçado(a)",
+        "6": "Burro(a)"
+      }
+    },
+    "4": {
+      "question": "Qual mês é o meu aniversário?",
+      "options": {
+        "0": "Janeiro",
+        "1": "Fevereiro",
+        "2": "Março",
+        "3": "Abril",
+        "4": "Maio",
+        "5": "Junho",
+        "6": "Julho",
+        "7": "Agosto",
+        "8": "Setembro",
+        "9": "Outubro",
+        "10": "Novembro",
+        "11": "Dezembro"
+      }
+    },
+    "5": {
+      "question": "Qual é meu maior medo?",
+      "options": {
+        "0": "Altura",
+        "1": "Escuro",
+        "2": "Insetos",
+        "3": "Morte",
+        "4": "Fracasso",
+        "5": "Solidão",
+        "6": "Falar em público",
+        "7": "Saúde"
+      }
+    },
+    "6": {
+      "question": "O que eu quero ser quando crescer?",
+      "options": {
+        "0": "Médico",
+        "1": "Professor",
+        "2": "Atleta",
+        "3": "YouTuber",
+        "4": "TI",
+        "5": "Policial",
+        "6": "Piloto",
+        "7": "Advogado",
+        "8": "Engenheiro"
+      }
+    },
+    "7": {
+      "question": "Qual o meu tipo de comida favorito?",
+      "options": {
+        "0": "Italiano🍕",
+        "1": "Chinês🏮",
+        "2": "Japonês🍜",
+        "3": "Francês🥐",
+        "4": "Americano🍔",
+        "5": "Mexicano🌮",
+        "6": "Brasileiro🥩"
+      }
+    },
+    "8": {
+      "question": "Eu sou uma pessoa noturna?",
+      "options": {
+        "0": "Sim",
+        "1": "Não"
+      }
+    },
+    "9": {
+      "question": "O que eu mais valorizo em uma amizade?",
+      "options": {
+        "0": "Lealdade",
+        "1": "Honestidade",
+        "2": "Responsabilidade",
+        "3": "Autenticidade",
+        "4": "Confiança",
+        "5": "Suporte"
+      }
+    },
+    "10": {
+      "question": "Qual o meu tipo favorito de lanche?",
+      "options": {
+        "0": "Salgado",
+        "1": "Doce",
+        "2": "Saudável"
+      }
+    },
+    "11": {
+      "question": "Qual dessas formas de passar o tempo eu escolheria?",
+      "options": {
+        "0": "Ficar em casa a assistir um filme",
+        "1": "Sair para uma festa",
+        "2": "Jantar com um amigo",
+        "3": "Jogar um jogo de tabuleiro com a família",
+        "4": "Trabalhar/ser produtivo"
+      }
+    },
+    "12": {
+      "question": "Qual o meu hobby favorito?",
+      "options": {
+        "0": "Ler",
+        "1": "Video Game",
+        "2": "Praticar esportes",
+        "3": "Cozinhar",
+        "4": "Ar livre/acampamento",
+        "5": "Fitness",
+        "6": "Artes"
+      }
+    },
+    "13": {
+      "question": "Qual a minha estação favorita?",
+      "options": {
+        "0": "Primavera",
+        "1": "Verão",
+        "2": "Outono",
+        "3": "Inverno",
+        "4": "Nenhum"
+      }
+    },
+    "14": {
+      "question": "O que me deixa mais bravo?",
+      "options": {
+        "0": "Falta de educação",
+        "1": "Música alta",
+        "2": "Comer em voz alta",
+        "3": "Ser interrompido",
+        "4": "Motoristas ruins",
+        "5": "Mensagens secas",
+        "6": "Bagunça"
+      }
+    },
+    "15": {
+      "question": "Qual o meu gênero de filme favorito?",
+      "options": {
+        "0": "Terror/Suspense",
+        "1": "Romance/comédia",
+        "2": "Ficção científica/fantasia",
+        "3": "Documentário/crime real",
+        "4": "Ação"
+      }
+    },
+    "16": {
+      "question": "Se eu pudesse morar em qualquer lugar do mundo, onde eu moraria?",
+      "options": {
+        "0": "Rural/Terra agrícola",
+        "1": "Cidade grande",
+        "2": "Praia/Resort",
+        "3": "Montanha/Cabana",
+        "4": "Subúrbios"
+      }
+    },
+    "17": {
+      "question": "Quão próximos nós somos?",
+      "options": {
+        "0": "Estranhos",
+        "1": "Conhecidos",
+        "2": "Amigos",
+        "3": "Amigos próximos",
+        "4": "Melhores amigos"
+      }
+    }
   }
 }

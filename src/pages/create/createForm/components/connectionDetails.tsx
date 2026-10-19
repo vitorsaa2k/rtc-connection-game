@@ -1,12 +1,14 @@
 import { useRTC } from "../../../../hooks/useRTC";
 import "./connectionDetails.css";
+import { useTranslation } from "react-i18next";
 
 export function ConnectionDetails() {
+  const { t } = useTranslation();
   const rtc = useRTC();
   return (
     <details className="connection_details_container">
       <summary className="connection_details_button">
-        Advanced connection details
+        {t("createForm.advancedConnectionDetails")}
       </summary>
       <dl className="details_list">
         <div className="details_item">

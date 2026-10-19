@@ -36,14 +36,11 @@ export function Index() {
           />
           <Card
             icon={<UsersIcon />}
-            title="Peer-to-peer"
-            description="Your two browsers talk directly to each other."
+            title={t("home.peerCardTitle")}
+            description={t("home.peerCardDesc")}
           />
         </div>
-        <p className="home_footer_text">
-          This game runs entirely in your browsers over a direct peer-to-peer
-          connection. No server keeps your answers.
-        </p>
+        <p className="home_footer_text">{t("home.footerText")}</p>
       </div>
     </main>
   );
