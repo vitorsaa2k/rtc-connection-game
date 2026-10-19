@@ -5,8 +5,10 @@ import "./copyAnswer.css";
 import { CopyLink } from "./copyLink";
 import { CopyAnswerHeader } from "./header";
 import { useRTC } from "../../../../hooks/useRTC";
+import { useTranslation } from "react-i18next";
 
 export function CopyAnswer({ encodedAnswer }: { encodedAnswer: string }) {
+  const { t } = useTranslation();
   const [isCopied, setIsCopied] = useState<boolean>(false);
   const rtc = useRTC();
 
@@ -25,8 +27,8 @@ export function CopyAnswer({ encodedAnswer }: { encodedAnswer: string }) {
     <div className="copy_answer_container">
       {rtc.isConnected ? (
         <div className="awaiting_header">
-          <h1>You're all set!</h1>
-          <p>Awaiting your friend start the game</p>
+          <h1>{t("join.copyAnswerAllSetTitle")}</h1>
+          <p>{t("join.copyAnswerAllSetDesc")}</p>
         </div>
       ) : (
         <>
@@ -40,13 +42,13 @@ export function CopyAnswer({ encodedAnswer }: { encodedAnswer: string }) {
           >
             {isCopied ? (
               <>
-                <CheckIcon className="copy_link_check_icon" /> Data has been
-                copied!
+                <CheckIcon className="copy_link_check_icon" />{" "}
+                {t("join.dataCopied")}
               </>
             ) : (
               <>
                 <CopyIcon className="copy_link_copy_icon" />
-                Copy answer data
+                {t("join.copyAnswerDataButton")}
               </>
             )}
           </button>

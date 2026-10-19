@@ -8,6 +8,6 @@ export const useMessageSender = () => {
 }
 
 type Message =
-  | { type: "answer", answer: { questionId: number, answer: string } }
+  | { type: "answer", answer: { questionId: number, answerIndex: number } }
   | { type: "start" }
   | { type: "finish" }

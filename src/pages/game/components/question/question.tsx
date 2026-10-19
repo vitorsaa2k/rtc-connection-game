@@ -6,21 +6,22 @@ import { Header } from "./header";
 import "./question.css";
 import { CheckIcon } from "../../../../components/icons/check";
 import { RightArrowIcon } from "../../../../components/icons/right";
+import { useTranslation } from "react-i18next";
 
 export function Question() {
+  const { t } = useTranslation();
   const [selectedAnswer, setSelectedAnswer] = useState<null | number>(null);
   const [state, dispatch] = useGameState();
   const rtc = useRTC();
+  const currentQuestion = questions[state.totalAnswered];
   function selectAnswer(index: number) {
     setSelectedAnswer(index);
   }
   function submitAnswer() {
     if (selectedAnswer === null) return console.warn("Select an answer first");
-    const selectedOption =
-      questions[state.totalAnswered].options[selectedAnswer];
     const answer = {
-      questionId: state.totalAnswered + 1,
-      answer: selectedOption,
+      questionId: currentQuestion.questionId,
+      answerIndex: selectedAnswer,
     };
     dispatch({
       type: "ANSWER",
@@ -36,10 +37,10 @@ export function Question() {
   return (
     <div className="question_container">
       <Header className="question_header">
-        {questions[state.totalAnswered].question}
+        {t(`questions.${currentQuestion.questionId}.question`)}
       </Header>
       <div className="options_container">
-        {questions[state.totalAnswered].options.map((option, i) => (
+        {Array.from({ length: currentQuestion.optionsCount }, (_, i) => (
           <button
             onClick={() => selectAnswer(i)}
             className={`option_button ${i === selectedAnswer && "selected_option"}`}
@@ -50,12 +51,12 @@ export function Question() {
               height={20}
               className={`option_check_icon ${i === selectedAnswer && "show_check_icon"}`}
             />
-            {option}
+            {t(`questions.${currentQuestion.questionId}.options.${i}`)}
           </button>
         ))}
       </div>
       <button onClick={submitAnswer} className="send_button">
-        Send <RightArrowIcon viewBox="0 0 256 256" />
+        {t("game.sendButton")} <RightArrowIcon viewBox="0 0 256 256" />
       </button>
     </div>
   );

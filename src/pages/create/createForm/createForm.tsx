@@ -7,8 +7,10 @@ import { CopyIcon } from "../../../components/icons/copy";
 import { ConnectionDetails } from "./components/connectionDetails";
 import { useState } from "react";
 import { CheckIcon } from "../../../components/icons/check";
+import { useTranslation } from "react-i18next";
 
 export function CreateForm({ encodedOffer }: { encodedOffer: string }) {
+  const { t } = useTranslation();
   const [isCopied, setIsCopied] = useState<boolean>(false);
   const offerLink = `${window.location.protocol}//${window.location.host}/join#offer=${encodedOffer}`;
 
@@ -35,12 +37,13 @@ export function CreateForm({ encodedOffer }: { encodedOffer: string }) {
       >
         {isCopied ? (
           <>
-            <CheckIcon className="copy_invite_data_check_icon" /> Copied!
+            <CheckIcon className="copy_invite_data_check_icon" />{" "}
+            {t("common.copied")}
           </>
         ) : (
           <>
             <CopyIcon className="copy_invite_data_copy_icon" />
-            Copy invite data instead
+            {t("createForm.copyInviteDataButton")}
           </>
         )}
       </button>

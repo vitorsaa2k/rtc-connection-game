@@ -5,8 +5,10 @@ import { useRTC } from "../../hooks/useRTC";
 import { base64UrlEncode } from "../../utils/base64";
 import { Link } from "@tanstack/react-router";
 import { ConnectionState } from "../../components/connectionState/connectionState";
+import { useTranslation } from "react-i18next";
 
 export function Create() {
+  const { t } = useTranslation();
   const [isCreating, setIsCreating] = useState<boolean>(false);
   const [isGeneratingOffer, setIsGeneratingOffer] = useState<boolean>(false);
   const [encodedOffer, setEncodedOffer] = useState<string>("");
@@ -32,26 +34,23 @@ export function Create() {
         ) : (
           <div className="game_form_container">
             <div className="game_title_container">
-              <p className="title">Create Game</p>
-              <p className="desc">
-                We'll set up a private room in your browser and give you a link
-                to send to your friend.
-              </p>
+              <p className="title">{t("create.createInitialTitle")}</p>
+              <p className="desc">{t("create.createInitialDesc")}</p>
             </div>
             <button
               onClick={createRoom}
               className="create_room_button"
               disabled={isGeneratingOffer}
             >
-              Create Room
+              {t("create.createInitialButton")}
             </button>
             <p className="keep_open_warn">
-              Keep this tab open while your friend joins.
+              {t("create.createInitialFooter")}
             </p>
           </div>
         )}
         <Link className="cancel_button" to="/">
-          Cancel
+          {t("create.createCancelButton")}
         </Link>
       </div>
     </main>

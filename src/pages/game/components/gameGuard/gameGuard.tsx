@@ -4,8 +4,10 @@ import { useNavigate } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { Spinner } from "../../../../components/icons/spinner";
 import "./gameGuard.css";
+import { useTranslation } from "react-i18next";
 
 export function GameGuard({ children }: { children: React.ReactNode }) {
+  const { t } = useTranslation();
   const [state, dispatch] = useGameState();
   const { isConnected, closeConnection } = useRTC();
   const navigate = useNavigate();
@@ -26,7 +28,7 @@ export function GameGuard({ children }: { children: React.ReactNode }) {
     return (
       <div className="game_guard_waiting">
         <Spinner style={{ width: 32, height: 32 }} />
-        <p>Waiting for host to start...</p>
+        <p>{t("game.gameGuardWaiting")}</p>
       </div>
     );
   }

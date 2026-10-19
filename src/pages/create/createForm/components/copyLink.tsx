@@ -3,8 +3,10 @@ import { CopyIcon } from "../../../../components/icons/copy";
 import "./copyLink.css";
 import { CheckIcon } from "../../../../components/icons/check";
 import { LinkIcon } from "../../../../components/icons/link";
+import { useTranslation } from "react-i18next";
 
 export function CopyLink({ generatedLink }: { generatedLink: string }) {
+  const { t } = useTranslation();
   const [isCopied, setIsCopied] = useState<boolean>(false);
   async function copyLinkToClipboard() {
     try {
@@ -20,7 +22,7 @@ export function CopyLink({ generatedLink }: { generatedLink: string }) {
   return (
     <div className="copy_link_container">
       <div className="copy_link_top">
-        <p className="copy_link_title">Send this link to your friend.</p>
+        <p className="copy_link_title">{t("createForm.copyLinkTitle")}</p>
         <div className="copy_link_input_container">
           <LinkIcon
             className="copy_link_input_link_icon"
@@ -37,12 +39,12 @@ export function CopyLink({ generatedLink }: { generatedLink: string }) {
       <button className="copy_link_button" onClick={copyLinkToClipboard}>
         {isCopied ? (
           <>
-            <CheckIcon className="copy_link_check_icon" /> Copied!
+            <CheckIcon className="copy_link_check_icon" /> {t("common.copied")}
           </>
         ) : (
           <>
             <CopyIcon className="copy_link_copy_icon" />
-            Copy link
+            {t("common.copyLink")}
           </>
         )}
       </button>

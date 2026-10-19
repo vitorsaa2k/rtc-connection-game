@@ -4,11 +4,13 @@ import { useState, type Dispatch, type SetStateAction } from "react";
 import { useRTC } from "../../../hooks/useRTC";
 import { extractSearchParamsFromURL } from "../../../utils/extractParamsFromURL";
 import { base64UrlDecode } from "../../../utils/base64";
+import { useTranslation } from "react-i18next";
 export function PasteAnswer({
   setIsStarting,
 }: {
   setIsStarting: Dispatch<SetStateAction<boolean>>;
 }) {
+  const { t } = useTranslation();
   const [answer, setAnswer] = useState<string>("");
   const rtc = useRTC();
   async function connect() {
@@ -29,25 +31,25 @@ export function PasteAnswer({
   return (
     <div className="connection_form_container">
       <div className="connection_form_title_container">
-        <p className="connection_form_title">Connect to your friend</p>
+        <p className="connection_form_title">{t("connect.connectTitle")}</p>
         <p className="connection_form_title_desc">
-          Open the answer link your friend sent, or paste their answer below.
+          {t("connect.connectDesc")}
         </p>
       </div>
       <label className="paste_answer_container">
-        <p className="paste_answer_label">Paste your friend's answer here</p>
+        <p className="paste_answer_label">{t("connect.pasteAnswerLabel")}</p>
         <textarea
           onChange={(e) => setAnswer(e.currentTarget.value)}
           className="paste_answer_input"
           rows={6}
-          placeholder="Paste the answer link or answer data"
+          placeholder={t("connect.pasteAnswerPlaceholder")}
         />
       </label>
       <button onClick={connect} className="connect_button">
-        Connect
+        {t("connect.connectButton")}
       </button>
       <Link className="go_back_link" to="/create">
-        Back to my room
+        {t("connect.backToRoom")}
       </Link>
     </div>
   );

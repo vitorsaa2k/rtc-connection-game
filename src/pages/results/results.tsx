@@ -7,8 +7,10 @@ import { Spinner } from "../../components/icons/spinner";
 import { CheckIcon } from "../../components/icons/check";
 import { XIcon } from "../../components/icons/x";
 import "./results.css";
+import { useTranslation } from "react-i18next";
 
 export function Results() {
+  const { t } = useTranslation();
   const [state, dispatch] = useGameState();
   const navigate = useNavigate();
   const { isConnected, closeConnection } = useRTC();
@@ -31,19 +33,28 @@ export function Results() {
     return (
       <div className="results_waiting">
         <Spinner style={{ width: 32, height: 32 }} />
-        <p>Waiting for your friend to finish...</p>
+        <p>{t("results.resultsWaiting")}</p>
       </div>
     );
   }
 
   const results = questions.map((question, i) => {
-    const ownAnswer = state.answers[i]?.answer ?? "";
-    const friendAnswer = state.player2Answers[i]?.answer ?? "";
+    const ownAnswerIndex = state.answers[i]?.answerIndex;
+    const friendAnswerIndex = state.player2Answers[i]?.answerIndex;
+    const ownAnswer =
+      ownAnswerIndex === undefined
+        ? ""
+        : t(`questions.${question.questionId}.options.${ownAnswerIndex}`);
+    const friendAnswer =
+      friendAnswerIndex === undefined
+        ? ""
+        : t(`questions.${question.questionId}.options.${friendAnswerIndex}`);
     return {
-      question: question.question,
+      question: t(`questions.${question.questionId}.question`),
       ownAnswer,
       friendAnswer,
-      matched: ownAnswer === friendAnswer,
+      matched:
+        ownAnswerIndex !== undefined && ownAnswerIndex === friendAnswerIndex,
     };
   });
   const score = results.filter((result) => result.matched).length;
@@ -54,9 +65,9 @@ export function Results() {
         <p className="results_score">
           {score} / {results.length}
         </p>
-        <p className="results_score_label">answers matched</p>
+        <p className="results_score_label">{t("results.answersMatched")}</p>
         <button onClick={goHome} className="home_button">
-          Home
+          {t("results.homeButton")}
         </button>
       </div>
       <div className="results_list">
@@ -73,11 +84,15 @@ export function Results() {
             <p className="result_question">{result.question}</p>
             <div className="result_answers">
               <p className="result_answer">
-                <span className="result_answer_label">You:</span>{" "}
+                <span className="result_answer_label">
+                  {t("results.youLabel")}
+                </span>{" "}
                 {result.ownAnswer}
               </p>
               <p className="result_answer">
-                <span className="result_answer_label">Friend:</span>{" "}
+                <span className="result_answer_label">
+                  {t("results.friendLabel")}
+                </span>{" "}
                 {result.friendAnswer}
               </p>
             </div>
