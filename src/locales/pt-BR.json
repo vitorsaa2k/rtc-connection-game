@@ -1,7 +1,8 @@
 {
   "common": {
     "copied": "Copiado!",
-    "copyLink": "Copiar link"
+    "copyLink": "Copiar link",
+    "changeLanguage": "Mudar idioma"
   },
 
   "home": {
