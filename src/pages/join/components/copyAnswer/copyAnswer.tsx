@@ -34,7 +34,7 @@ export function CopyAnswer({ encodedAnswer }: { encodedAnswer: string }) {
         <>
           <CopyAnswerHeader />
           <CopyLink
-            generatedLink={`${window.location.protocol}//${window.location.host}/connect#answer=${encodedAnswer}`}
+            generatedLink={`${window.location.protocol}//${window.location.host}/${window.location.href.includes("rtc-connection-game") && "rtc-connection-game/"}connect#answer=${encodedAnswer}`}
           />
           <button
             onClick={copyAnswerToClipboard}

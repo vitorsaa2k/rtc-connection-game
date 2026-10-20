@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 export function CreateForm({ encodedOffer }: { encodedOffer: string }) {
   const { t } = useTranslation();
   const [isCopied, setIsCopied] = useState<boolean>(false);
-  const offerLink = `${window.location.protocol}//${window.location.host}/join#offer=${encodedOffer}`;
+  const offerLink = `${window.location.protocol}//${window.location.host}/${window.location.href.includes("rtc-connection-game") && "rtc-connection-game/"}join#offer=${encodedOffer}`;
 
   async function copyEncodedOfferToClipboard() {
     try {
