@@ -40,7 +40,6 @@
 
 .option_button:not(.selected_option):hover {
   background-color: oklch(0.3816 0.0268 188.55);
-  border: solid 1px var(--primary-color);
 }
 
 .option_button:active {
