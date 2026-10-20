@@ -11,4 +11,5 @@ export default defineConfig({
     }),
     react({ compiler: true }),
   ],
+  base: "/rtc-connection-game",
 });
